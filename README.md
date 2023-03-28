@@ -30,4 +30,4 @@ go run .
 You can test the project from the page [http://localhost:8080/](http://localhost:8080/)
 
 ## Authors
-- [Elena Khaletska](https://01.kood.tech/git/ekhalets)
+- [Elena Khaletska](https://github.com/khaletska)
