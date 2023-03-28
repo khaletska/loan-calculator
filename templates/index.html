@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
+    <title>loan calculator</title>
+</head>
+
+<body>
+    <div class="constraints">
+        <p>
+            Please fill out the form below with the following constraints in mind:
+        </p>
+        <ul>
+            <li>
+                The loan sum should be between €2000 and €10000.
+            </li>
+            <li>
+                The loan period should be between 12 and 60 months.
+            </li>
+        </ul>
+    </div>
+    <div class="form-container">
+        <form action="/calculate-loan" method="post">
+            <div class="form-input">
+                <label for="personal-code">Insert your personal code:</label>
+                <input type="text" pattern="[0-9]*" minlength="11" maxlength="11" name="personal-code">
+            </div>
+            <div class="form-input">
+                <label for="loan-amount">Insert desired loan amount:</label>
+                <input type="text" pattern="[0-9]*" minlength="4" maxlength="5" min="2000" max="10000" name="loan-amount">
+            </div>
+            <div class="form-input">
+                <label for="loan-period">Insert desired loan period:</label>
+                <div class="loan-period-input">
+                    <input type="text" pattern="[0-9]*" minlength="2" maxlength="2" min="12" max="60" name="loan-period">
+                    <span>months</span>
+                </div>
+            </div>
+            <div class="input-error" {{ if ne .InputError.ErrorCode 0 }} style="display: block;" {{ end }}>
+                <p>{{ .InputError.Message }}</p>
+            </div>
+            <button type="submit">calculate</button>
+        </form>
+        <div class="desicion" {{ if ne .Loan 0 }} style="display: block;" {{ end }}>     
+            {{ if .Desicion }}
+            <p>Congratulations! We approved your loan: €{{ .Loan }} for {{ .Period }} months.</p>
+            {{ else }}
+            <p>Unfortunately, we are not ready to approve your loan because {{ .ErrReason }}.</p>
+            {{ end }}
+        </div>
+    </div>
+</body>
+
+</html>

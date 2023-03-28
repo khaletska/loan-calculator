@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-1: #F0E7D5;
+    --color-2: #4C634C;
+    --color-3: #29362994;
+    --color-4: #c57a09;
+    --color-5: #E79609;
+}
+
+title {
+    text-transform: uppercase;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-3);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+body > * {
+    margin: 0 10px;
+}
+
+.form-container {
+    background-color: var(--color-1);
+    border: 1px solid var(--color-2);
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 15px;
+    text-transform: uppercase;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.constraints p {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.constraints li {
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.loan-period-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    width: auto;
+    height: 45px;
+    background-color: transparent;
+    /* border-style: none; */
+    border: 1px solid var(--color-3);
+    box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    font-size: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+button {
+    background-color: var(--color-5);
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+
+    border: none;
+    border-radius: 60px;
+    margin-top: 10px;
+    padding: 5px 18px;
+}
+
+button:hover {
+    background-color: var(--color-4);
+}
+
+.input-error {
+    display: none;
+    text-align: center;
+    text-transform: uppercase;
+    color: red;
+}
+
+.desicion {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#error-container {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#error-code {
+    margin: 0;
+    color: var(--color-3);
+    font-family: var(--title-text);
+    font-size: 400px;
+}
+
+#error-message {
+    color: var(--color-2);
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#btn-err {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 20px;
+    background-color: var(--color-5);
+}
